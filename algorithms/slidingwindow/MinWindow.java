@@ -20,6 +20,7 @@ public class MinWindow {
         System.out.println(minWindow("ADOBECODEBANC", "ABC"));
     }
 
+    // todo 添加剪枝逻辑
     public static String minWindow(String s, String t) {
         Map<Character, Integer> need = new HashMap<>(), window = new HashMap<>();
         char[] sChars = s.toCharArray();
@@ -60,6 +61,6 @@ public class MinWindow {
             }
         }
 
-        return len == Integer.MAX_VALUE ? "" : s.substring(start, len);
+        return len == Integer.MAX_VALUE ? "" : s.substring(start, start + len);
     }
 }
