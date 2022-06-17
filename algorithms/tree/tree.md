@@ -16,7 +16,7 @@
 
 
 ```java
-// 遍历模版
+/** 遍历模版 */
 void traverse(TreeNode root) {
     // 前序遍历代码位置
     traverse(root.left);    
@@ -25,7 +25,7 @@ void traverse(TreeNode root) {
     // 后序遍历代码位置
 }
 
-// 前序遍历
+/** 前序遍历 */
 public List<Integer> preorderTraversal(TreeNode root) {
   if (root == null) {
     retuen new LinkedList();
@@ -39,7 +39,7 @@ public List<Integer> preorderTraversal(TreeNode root) {
   return preorderList;
 }
 
-// 中序遍历
+/** 中序遍历 */
 public List<Integer> inorderTraversal(TreeNode root) {
     if (root == null) {
         return new LinkedList();
@@ -51,7 +51,7 @@ public List<Integer> inorderTraversal(TreeNode root) {
     return lf;
 }
 
-// 后序遍历
+/** 后序遍历 */
 public List<Integer> postorderTraversal(TreeNode root) {
     if (root == null) {
         return new LinkedList();
