@@ -33,7 +33,7 @@ import java.util.Collections;
  * @author brian.zhou
  * @date 6/19/22
  */
-public class Merge {
+public class MergeTwoArrays {
 
     public static void main(String[] args) {
         int[] nums1 = new int[]{1, 2, 3, 0, 0, 0};
