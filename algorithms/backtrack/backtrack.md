@@ -28,3 +28,14 @@ def backtrack(路径, 选择列表):
     - 形式一、元素无重不可复选
     - 形式二、元素可重不可复选
     - 形式三、元素无重可复选
+
+
+LeetCode	力扣	难度
+39. Combination Sum	39. 组合总和	🟠
+40. Combination Sum II	40. 组合总和 II	🟠
+46. Permutations	46. 全排列	🟠
+47. Permutations II	47. 全排列 II	🟠
+77. Combinations	77. 组合	🟠
+78. Subsets	78. 子集	🟠
+90. Subsets II	90. 子集 II	🟠
+216. Combination Sum III	216. 组合总和 III	🟠

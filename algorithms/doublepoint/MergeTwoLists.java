@@ -1,7 +1,5 @@
 package doublepoint;
 
-import java.util.Arrays;
-
 /**
  * 21. 合并两个有序链表
  * 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
@@ -64,42 +62,4 @@ public class MergeTwoLists {
         return dummy.next;
     }
 
-    public static class ListNode {
-
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        static ListNode convert(int[] arr) {
-            if (arr.length == 0) {
-                return null;
-            }
-
-            ListNode head = new ListNode(arr[0]), p = head;
-            for (int i = 1; i < arr.length; i++) {
-                p.next = new ListNode(arr[i]);
-                p = p.next;
-            }
-            return head;
-        }
-
-        static void print(ListNode node) {
-            while (node != null) {
-                System.out.print(node.val + " ");
-                node = node.next;
-            }
-            System.out.println();
-        }
-    }
 }
