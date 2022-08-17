@@ -1,7 +1,6 @@
 package dp;
 
-import java.util.List;
-import java.util.Map;
+import java.util.Arrays;
 
 /**
  * 322. 零钱兑换
@@ -28,6 +27,7 @@ import java.util.Map;
  */
 public class CoinChange {
 
+
     public static void main(String[] args) {
         System.out.println(coinChange(new int[]{1, 2, 5}, 11));
         System.out.println(coinChange(new int[]{2}, 3));
@@ -35,10 +35,12 @@ public class CoinChange {
     }
 
     public static int coinChange(int[] coins, int amount) {
-        return dp(coins, amount);
+        int[] memo = new int[amount + 1];
+        Arrays.fill(memo, -999);
+        return dp(coins, amount, memo);
     }
 
-    public static int dp(int[] coins, int amount) {
+    public static int dp(int[] coins, int amount , int[] memo) {
         if (amount == 0) {
             return 0;
         }
@@ -46,16 +48,21 @@ public class CoinChange {
         if (amount < 0) {
             return -1;
         }
+
+        if (memo[amount] != -999) {
+            return memo[amount];
+        }
         // 直接考虑数量，而是不是回溯的那些数额
         int result = Integer.MAX_VALUE;
         for (int coin : coins) {
-            int subProblem = dp(coins, amount - coin);
+            int subProblem = dp(coins, amount - coin, memo);
             if (subProblem == -1) {
                 continue;
             }
             // 最值问题，可以一个一个去比较
             result = Math.min(result, subProblem + 1);
         }
-        return result == Integer.MAX_VALUE ? -1 : result;
+        memo[amount] = result == Integer.MAX_VALUE ? -1 : result;
+        return memo[amount];
     }
 }
